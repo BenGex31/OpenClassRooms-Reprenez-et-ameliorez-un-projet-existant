@@ -81,7 +81,7 @@
 		callback = callback || function () {};
 
 		// Generate an ID
-		var newId = Date.now();
+		var newId = Date.now(); // use of the Date.now () javascript function to generate a unique identifier
 		console.log(newId);
 	    //var charset = "0123456789";
 
