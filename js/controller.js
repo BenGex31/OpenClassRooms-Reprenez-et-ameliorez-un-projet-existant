@@ -95,7 +95,6 @@
 	 * object and it'll handle the DOM insertion and saving of the new item.
 	 */
 	Controller.prototype.addItem = function (title) { // first bug fixes "adddItem"
-		//debugger;
 		var self = this;
 
 		if (title.trim() === '') {
@@ -125,6 +124,7 @@
 	Controller.prototype.editItemSave = function (id, title) {
 		var self = this;
 		title = title.trim(); // use the javascript trim() function to remove spaces
+
 
 		/*while (title[0] === " ") { // fonction trim()
 			title = title.slice(1);
