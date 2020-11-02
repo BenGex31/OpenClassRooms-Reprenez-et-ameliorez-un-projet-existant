@@ -81,7 +81,8 @@
 		callback = callback || function () {};
 
 		// Generate an ID
-		var newId = Date.now();
+		var newId = Date.now(); // use of the Date.now () javascript function to generate a unique identifier
+    
 		console.log(newId);
 	    //var charset = "0123456789";
 
@@ -126,16 +127,18 @@
 		var todoId;
 		
 		for (var i = 0; i < todos.length; i++) {
+			debugger;
 			if (todos[i].id == id) {
 				todoId = todos[i].id;
+				todos.splice(i, 1); // toggle the splice() function
 			}
 		}
 
-		for (var i = 0; i < todos.length; i++) {
+		/*for (var i = 0; i < todos.length; i++) { // unnecessary for loop
 			if (todos[i].id == todoId) {
 				todos.splice(i, 1);
 			}
-		}
+		}*/
 
 		localStorage[this._dbName] = JSON.stringify(data);
 		callback.call(this, todos);
