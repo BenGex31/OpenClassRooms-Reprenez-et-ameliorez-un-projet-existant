@@ -62,7 +62,6 @@
 	 * todo-list
 	 */
 	Controller.prototype.showAll = function () {
-		//debugger;
 		var self = this;
 		self.model.read(function (data) {
 			self.view.render('showEntries', data);
@@ -111,7 +110,6 @@
 	 * Triggers the item editing mode.
 	 */
 	Controller.prototype.editItem = function (id) {
-		//debugger;
 		var self = this;
 		self.model.read(id, function (data) {
 			self.view.render('editItem', {id: id, title: data[0].title});
@@ -161,7 +159,6 @@
 	 * storage
 	 */
 	Controller.prototype.removeItem = function (id) {
-		//debugger;
 		var self = this;
 		var items;
 		self.model.read(function(data) {
@@ -205,7 +202,6 @@
 	 * @param {boolean|undefined} silent Prevent re-filtering the todo items
 	 */
 	Controller.prototype.toggleComplete = function (id, completed, silent) {
-		//debugger;
 		var self = this;
 		self.model.update(id, { completed: completed }, function () {
 			self.view.render('elementComplete', {
@@ -239,7 +235,6 @@
 	 * number of todos.
 	 */
 	Controller.prototype._updateCount = function () {
-		//debugger;
 		var self = this;
 		self.model.getCount(function (todos) {
 			self.view.render('updateElementCount', todos.active);
@@ -258,7 +253,6 @@
 	 * @param {boolean|undefined} force  forces a re-painting of todo items.
 	 */
 	Controller.prototype._filter = function (force) {
-		//debugger;
 		var activeRoute = this._activeRoute.charAt(0).toUpperCase() + this._activeRoute.substr(1);
 
 		// Update the elements on the page, which change with each completed todo
@@ -278,7 +272,6 @@
 	 * Simply updates the filter nav's selected states
 	 */
 	Controller.prototype._updateFilterState = function (currentPage) {
-		//debugger;
 		// Store a reference to the active route, allowing us to re-filter todo
 		// items as they are marked complete or incomplete.
 		this._activeRoute = currentPage;
