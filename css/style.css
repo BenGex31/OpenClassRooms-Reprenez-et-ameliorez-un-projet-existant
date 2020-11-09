@@ -1,0 +1,36 @@
+.container {
+    background-color: lightgray;
+    padding-top: 2em;
+    padding-bottom: 1em;
+}
+
+#mainTitle {
+    margin-top: 1em;
+}
+
+#mainTitle, #secondTitle {
+    margin-bottom: 2rem;
+    background-color: lavender;
+    border: 3px ridge lightblue;
+    padding-left: 0.5em;
+}
+
+.card-header, .collapse, .accordion {
+    border: 2px ridge lightblue;
+    background-color: lavender;
+}
+
+.fa-tasks {
+    margin-right: 1em;
+    color: black;
+}
+
+.imgBloc {
+    padding-top: 1em;
+    border-top: 2px solid red;
+}
+
+.imgAddTask, .imgModifTask {
+    width: 350px;
+    height: 210px;
+}

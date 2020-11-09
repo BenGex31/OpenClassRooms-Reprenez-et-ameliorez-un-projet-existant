@@ -1,50 +1,214 @@
-<!doctype html>
-<html lang="en" data-framework="javascript">
-	<head>
-		<meta charset="utf-8">
-		<title>To-do list app</title>
-		<link rel="stylesheet" href="node_modules/todomvc-common/base.css">
-		<link rel="stylesheet" href="node_modules/todomvc-app-css/index.css">
-	</head>
-	<body>
-		<section class="todoapp">
-			<header class="header">
-				<h1>todos</h1>
-				<input class="new-todo" placeholder="What needs to be done?" autofocus>
-			</header>
-			<section class="main">
-				<input class="toggle-all" type="checkbox">
-				<label for="toggle-all">Mark all as complete</label>
-				<ul class="todo-list"></ul>
-			</section>
-			<footer class="footer">
-				<span class="todo-count"></span>
-				<ul class="filters">
-					<li>
-						<a href="#/" class="selected">All</a>
-					</li>
-					<li>
-						<a href="#/active">Active</a>
-					</li>
-					<li>
-						<a href="#/completed">Completed</a>
-					</li>
-				</ul>
-				<button class="clear-completed">Clear completed</button>
-			</footer>
-		</section>
-		<footer class="info">
-			<p>Double-click to edit a todo</p>
-			<p>Created by Oscar Godson</p>
-			<p>Refactored by Christoph Burgmer</p>
-		</footer>
-		<script src="node_modules/todomvc-common/base.js"></script>
-		<script src="js/helpers.js"></script>
-		<script src="js/store.js"></script>
-		<script src="js/model.js"></script>
-		<script src="js/template.js"></script>
-		<script src="js/view.js"></script>
-		<script src="js/controller.js"></script>
-		<script src="js/app.js"></script>
-	</body>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/35a79302cd.js" crossorigin="anonymous"></script>
+
+    <title>Reprenez et améliorez un projet existant</title>
+</head>
+<body data-spy="scroll" data-target="list-example">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <img src="img/document-de-guide-de-l-utilisateur-sur-le-manuel-de-livre-de-table-96999694 (1).jpg" alt="">
+            </div>
+        </div>
+        <h1 id="mainTitle" class="text-center">Guide de l'utilisateur</h1>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>L’application todos permet de créer et de gérer une liste de tâches à l’aide de fonctionnalités simples. Les tâches sont stockées dans le <strong>localStorage</strong>, il suffit d’utiliser toujours le même navigateur pour les retrouver.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 id="secondTitle">Les fonctionnalités</h2>
+            </div>
+        </div>
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <i class="fas fa-tasks"></i>Ajouter un tâche
+                        </button>
+                    </h2>
+                </div>
+            
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <p>Pour ajouter une tâche, il suffit de cliquer sur le champ <strong>"What needs to be done?"</strong>. <br>D'écrire votre tâche et d’appuyersur la touche Entrée du clavier ou de cliquer en dehors du champ de saisie.<br>La tâche créée s‘ajoute à la liste.</p>
+                        <div class="row imgBloc">
+                            <div class="col-lg-4">
+                                <img class="imgAddTask" src="img/Todo_list_main_img.png" alt="main_img">
+                            </div>
+                            <div class="col-lg-4">
+                                <img class="imgAddTask" src="img/Todo_list_write_todo_img.png" alt="write_todo">
+                            </div>
+                            <div class="col-lg-4">
+                                <img class="imgAddTask" src="img/Todo_list_write_todo_validation_img.png" alt="write_todo_validation">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <i class="fas fa-tasks"></i>Modifier une tâche
+                            </button>
+                        </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <p>Modifier une tâche (ou l’éditer), double-cliquez sur la tâche pour afficher le champ d’édition.<br> Une fois la modification effectuée, il suffit d’appuyer sur la touche Entrée du clavier ou de cliquer en dehors du champ de saisie pour qu’elle soit prise en compte.<br> Si le champ n’est plus renseigné, la tâche sera supprimée.</p>
+                        <div class="row imgBloc">
+                            <div class="col-lg-4">
+                                <img class="imgModifTask" src="img/Todo_list_write_todo_validation_img.png" alt="main_img">
+                            </div>
+                            <div class="col-lg-4">
+                                <img class="imgModifTask" src="img/Todo_list_write_todo_modif.png" alt="write_todo">
+                            </div>
+                            <div class="col-lg-4">
+                                <img class="imgModifTask" src="img/Todo_list_write_todo_modif_validation.png" alt="write_todo_validation">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <i class="fas fa-tasks"></i>Supprimer une tâche
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <p>Pour supprimer une tâche, il suffit de passer sur la tâche à supprimer et de cliquer sur la croix qui apparaît sur la droite, en face de la tâche. Attention, il n’est pas possible de revenir en arrière, en effet, toute suppression est irréversible.</p>
+                        <div class="row imgBloc">
+                            <div class="col-lg-4">
+                                <img class="imgModifTask" src="img/Todo_list_write_todo_modif_validation.png" alt="main_img">
+                            </div>
+                            <div class="col-lg-4">
+                                <img class="imgModifTask" src="img/Todo_list_write_todo_validation_to_delete_img.png" alt="write_todo">
+                            </div>
+                            <div class="col-lg-4">
+                                <img class="imgModifTask" src="img/Todo_list_write_todo_validation_deleted_img.png" alt="write_todo_validation">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <i class="fas fa-tasks"></i>Terminer une ou plusieurs tâche(s)
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <p>Pour terminer une tâche (ou la compléter), il suffit de cliquer dans le cercle de la tâche terminée qui se situe à gauche de chaque tâche.</p>
+                        <div class="row imgBloc">
+                            <div class="col-lg-4">
+                                <img class="imgModifTask" src="img/Todo_list_write_todo_validation_list_img.png" alt="main_img">
+                            </div>
+                            <div class="col-lg-4">
+                                <img class="imgModifTask" src="img/Todo_list_write_todo_validation_list_selected_img.png" alt="write_todo">
+                            </div>
+                            <div class="col-lg-4">
+                                <img class="imgModifTask" src="img/Todo_list_write_todo_validation_list_checked_img.png" alt="write_todo_validation">
+                            </div>
+                        </div>
+                        <br>
+                        <p>Il est également possible de marquer les tâches comme terminées toutes à la fois. Pour cela, il suffit de cliquer sur la flèche vers le bas qui se situe en haut à gauche du champ.</p>
+                        <div class="row text-center imgBloc">
+                            <div class="col-lg-6">
+                                <img class="imgModifTask" src="img/Todo_list_write_todo_validation_list_img.png" alt="main_img">
+                            </div>
+                            <div class="col-lg-6">
+                                <img class="imgModifTask" src="img/Todo_list_write_todo_validation_list_all_checked_img.png" alt="write_todo">
+                            </div>
+                        </div>
+                        <br>
+                        <p>Une tâche terminée apparaît différemment : le texte à une couleur grise plus claire et celui-ci est barré.</p>
+                        <p>Il est également possible de rétablir les tâches comme actives en cliquant de nouveau sur la flèche vers le bas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            <i class="fas fa-tasks"></i>Supprimer toutes les tâches terminées
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <p>Toutes les tâches ayant le statut terminé <strong>"completed"</strong> peuvent être supprimées d’un seul coup. Il suffit de cliquer sur le bouton <strong>"Clear completed"</strong> qui apparaît en bas à droite dès qu’une tâche au moins est terminée.</p>
+                        <div class="row imgBloc">
+                            <div class="col-lg-4">
+                                <img class="imgModifTask" src="img/Todo_list_write_todo_validation_list_partial_checked_img.png" alt="main_img">
+                            </div>
+                            <div class="col-lg-4">
+                                <img class="imgModifTask" src="img/Todo_list_write_todo_validation_list_partial_checked_clear_selected_img.png" alt="write_todo">
+                            </div>
+                            <div class="col-lg-4">
+                                <img class="imgModifTask" src="img/Todo_list_write_todo_validation_list_partial_checked_clear_completed_img.png" alt="write_todo_validation">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            <i class="fas fa-tasks"></i>Filtrer les tâches
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseSix" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <p>L’application propose trois boutons sous la liste de tâches. Il s’agit de trois filtres qui permettent d’afficher les tâches selon leur état :</p>
+                        <ul>
+                            <li>Le filtre <strong>All</strong> permet d’afficher toutes les tâches quelque soit leur état de réalisation.</li>
+                            <li>Le filtre <strong>Active</strong> permet de n’afficher que les tâches actives, c’est-à-dire non terminées.</li>
+                            <li>Le filtre <strong>Completed</strong> permet de n’afficher que les tâches terminées.</li>
+                        </ul>
+                        <div class="row imgBloc">
+                            <div class="col-lg-4">
+                                <img class="imgModifTask" src="img/Todo_list_write_todo_validation_list_partial_checked_img.png" alt="main_img">
+                            </div>
+                            <div class="col-lg-4">
+                                <img class="imgModifTask" src="img/Todo_list_write_todo_validation_list_partial_checked_filter_active_img.png" alt="write_todo">
+                            </div>
+                            <div class="col-lg-4">
+                                <img class="imgModifTask" src="img/Todo_list_write_todo_validation_list_partial_checked_filter_completed_img.png" alt="write_todo_validation">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
 </html>
