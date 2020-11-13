@@ -126,7 +126,7 @@
 		var todos = data.todos;
 		var todoId;
 		
-		for (var i = 0; i < todos.length; i++) {debugger;
+		for (var i = 0; i < todos.length; i++) {
 			if (todos[i].id == id) {
 				todoId = todos[i].id;
 				todos.splice(i, 1); // toggle the splice() function
